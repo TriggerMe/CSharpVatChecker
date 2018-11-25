@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace VatQuery
+namespace TriggerMe
 {
     public static class VatQuery
     {
