@@ -13,6 +13,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 using System;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
@@ -36,7 +37,8 @@ namespace TriggerMe
         /// <param name="country">2 digit Country Code (i.e. GB/FR/IE ...)</param>
         /// <param name="vatNumber">VAT number to check (without country code)</param>
         /// <returns>A valid VatCheckerResult. Check "Valid" field for success/failure.</returns>
-        public static async Task<VatCheckerResult> CheckVATNumberAsync(string country, string vatNumber)
+        public static async Task<VatCheckerResult> CheckVATNumberAsync(string country, string vatNumber,
+            CancellationToken cancellationToken = default(CancellationToken))
         {
             if (string.IsNullOrEmpty(country))
                 throw new ArgumentNullException(nameof(country));
@@ -59,7 +61,7 @@ namespace TriggerMe
 
             var strContent = new StringContent(envelope.ToString(), Encoding.UTF8, "text/xml");
 
-            using (var resp = await DefaultClient.PostAsync("", strContent))
+            using (var resp = await DefaultClient.PostAsync("", strContent, cancellationToken))
             {
                 var rStr = await resp.Content.ReadAsStringAsync();
 
