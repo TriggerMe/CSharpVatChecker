@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriggerMe.CSharpVatChecker", "src\TriggerMe.CSharpVatChecker.csproj", "{93EAA6FC-BA11-4C21-85EF-93292330E4A8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpVatChecker.Sample", "sample\CSharpVatChecker.Sample.csproj", "{284C5928-F61E-44A5-BE8C-DB572B433CED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,17 @@ Global
 		{93EAA6FC-BA11-4C21-85EF-93292330E4A8}.Release|x64.Build.0 = Release|Any CPU
 		{93EAA6FC-BA11-4C21-85EF-93292330E4A8}.Release|x86.ActiveCfg = Release|Any CPU
 		{93EAA6FC-BA11-4C21-85EF-93292330E4A8}.Release|x86.Build.0 = Release|Any CPU
+		{284C5928-F61E-44A5-BE8C-DB572B433CED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{284C5928-F61E-44A5-BE8C-DB572B433CED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{284C5928-F61E-44A5-BE8C-DB572B433CED}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{284C5928-F61E-44A5-BE8C-DB572B433CED}.Debug|x64.Build.0 = Debug|Any CPU
+		{284C5928-F61E-44A5-BE8C-DB572B433CED}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{284C5928-F61E-44A5-BE8C-DB572B433CED}.Debug|x86.Build.0 = Debug|Any CPU
+		{284C5928-F61E-44A5-BE8C-DB572B433CED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{284C5928-F61E-44A5-BE8C-DB572B433CED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{284C5928-F61E-44A5-BE8C-DB572B433CED}.Release|x64.ActiveCfg = Release|Any CPU
+		{284C5928-F61E-44A5-BE8C-DB572B433CED}.Release|x64.Build.0 = Release|Any CPU
+		{284C5928-F61E-44A5-BE8C-DB572B433CED}.Release|x86.ActiveCfg = Release|Any CPU
+		{284C5928-F61E-44A5-BE8C-DB572B433CED}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
