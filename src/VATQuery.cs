@@ -15,12 +15,11 @@ using System.Net.Http;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Xml;
 using System.Xml.Linq;
 
-namespace TriggerMe
+namespace TriggerMe.VAT
 {
-    public static class VatQuery
+    public class VATQuery : IVATQuery
     {
         // Cache the Http Client
         static HttpClient DefaultClient = new HttpClient
@@ -37,7 +36,7 @@ namespace TriggerMe
         /// <param name="country">2 digit Country Code (i.e. GB/FR/IE ...)</param>
         /// <param name="vatNumber">VAT number to check (without country code)</param>
         /// <returns>A valid VatCheckerResult. Check "Valid" field for success/failure.</returns>
-        public static async Task<VatCheckerResult> CheckVATNumberAsync(string country, string vatNumber,
+        public async Task<VATCheckerResult> CheckVATNumberAsync(string country, string vatNumber,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             if (string.IsNullOrEmpty(country))
@@ -69,7 +68,7 @@ namespace TriggerMe
 
                 var checkVatResponse = returnElem?.Element(rootNs + "Body")?.Element(checkVatNs + "checkVatResponse");
 
-                return new VatCheckerResult
+                return new VATCheckerResult
                 {
                     CountryCode = checkVatResponse?.Element(checkVatNs + "countryCode")?.Value,
                     VatNumber = checkVatResponse?.Element(checkVatNs + "vatNumber")?.Value,
@@ -79,36 +78,5 @@ namespace TriggerMe
                 };
             }
         }
-    }
-
-    /// <summary>
-    /// Represents a Checker Result
-    /// </summary>
-    public class VatCheckerResult
-    {
-        /// <summary>
-        /// Name of the organisation
-        /// </summary>
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Country Code the organisation belongs to
-        /// </summary>
-        public string CountryCode { get; set; }
-
-        /// <summary>
-        /// Registered VAT of the organisation
-        /// </summary>
-        public string Address { get; set; }
-
-        /// <summary>
-        /// If the VAT Number valid?
-        /// </summary>
-        public bool Valid { get; set; }
-
-        /// <summary>
-        /// VAT Number of the organisation
-        /// </summary>
-        public string VatNumber { get; set; }
     }
 }
