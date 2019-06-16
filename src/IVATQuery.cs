@@ -3,6 +3,9 @@ using System.Threading.Tasks;
 
 namespace TriggerMe.VAT
 {
+    /// <summary>
+    /// Interface defining the basic VATQuery operations
+    /// </summary>
     public interface IVATQuery
     {
         /// <summary>

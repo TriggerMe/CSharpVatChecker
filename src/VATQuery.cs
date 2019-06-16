@@ -19,6 +19,9 @@ using System.Xml.Linq;
 
 namespace TriggerMe.VAT
 {
+    /// <summary>
+    /// Implements the VAT Query operations
+    /// </summary>
     public class VATQuery : IVATQuery
     {
         // Cache the Http Client
@@ -35,9 +38,10 @@ namespace TriggerMe.VAT
         /// </summary>
         /// <param name="country">2 digit Country Code (i.e. GB/FR/IE ...)</param>
         /// <param name="vatNumber">VAT number to check (without country code)</param>
+        /// <param name="cancellationToken">Cancellation Token</param>
         /// <returns>A valid VatCheckerResult. Check "Valid" field for success/failure.</returns>
         public async Task<VATCheckerResult> CheckVATNumberAsync(string country, string vatNumber,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             if (string.IsNullOrEmpty(country))
                 throw new ArgumentNullException(nameof(country));

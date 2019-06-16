@@ -4,11 +4,13 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <AssemblyName>TriggerMe.VATChecker</AssemblyName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup>
     <IsPackable>true</IsPackable>
-    <PackageVersion>0.0.2</PackageVersion>
+    <PackageVersion>0.0.3</PackageVersion>
     <Title>VAT Number Checker</Title>
     <Description>A .NET Standard VAT Checker implementation using the VIES database (http://ec.europa.eu/taxation_customs/vies)</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
